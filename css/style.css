@@ -1,0 +1,787 @@
+/* ============================
+   VALINOR RANCH — STYLE SYSTEM
+   ============================ */
+
+/* ---- CUSTOM PROPERTIES ---- */
+:root {
+  /* Primary — from the logo */
+  --logo-ink: #1A1C10;
+  --ranch-cream: #F3F0E7;
+  --bronze-gold: #A8874A;
+  --deep-forest: #243B2D;
+
+  /* Support */
+  --warm-stone: #5A5650;
+  --gold-tint: #EFE5CF;
+  --divider: #D6D0C2;
+  --parchment: #FAF6EE;
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', Arial, sans-serif;
+
+  /* Spacing */
+  --section-padding: 140px 40px;
+  --section-padding-sm: 80px 24px;
+  --max-width: 1200px;
+}
+
+
+/* ---- RESET ---- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--warm-stone);
+  background: var(--ranch-cream);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--bronze-gold);
+  color: var(--ranch-cream);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--ranch-cream); }
+::-webkit-scrollbar-thumb { background: var(--divider); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--bronze-gold); }
+
+
+/* ---- TYPOGRAPHY ---- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  color: var(--logo-ink);
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(28px, 4vw, 44px);
+}
+
+h3 {
+  font-size: clamp(22px, 3vw, 32px);
+}
+
+p {
+  max-width: 560px;
+}
+
+.text-large {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 300;
+  line-height: 1.45;
+  color: var(--logo-ink);
+  letter-spacing: -0.2px;
+}
+
+blockquote {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--logo-ink);
+}
+
+
+/* ---- BRAND ELEMENTS ---- */
+.section-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--bronze-gold);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.gold-rule {
+  width: 48px;
+  height: 1px;
+  background: var(--bronze-gold);
+}
+
+.gold-rule--center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat__number {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--logo-ink);
+  display: block;
+}
+
+.stat__label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--warm-stone);
+  margin-top: 4px;
+  display: block;
+}
+
+
+/* ---- LAYOUT ---- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--section-padding);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.grid-2--asymmetric {
+  grid-template-columns: 5fr 6fr;
+  gap: 60px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+/* ---- NAVIGATION ---- */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0 40px;
+  border-bottom: 1px solid transparent;
+  transition: all 0.6s ease;
+}
+
+.site-nav.nav-scrolled {
+  background: rgba(243, 240, 231, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: var(--divider);
+}
+
+.site-nav__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+.site-nav__brand {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav__brand img {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+
+.site-nav__links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  list-style: none;
+}
+
+.site-nav__link {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(243, 240, 231, 0.7);
+  transition: color 0.6s ease;
+  cursor: pointer;
+}
+
+.nav-scrolled .site-nav__link {
+  color: var(--warm-stone);
+}
+
+.site-nav__link:hover {
+  color: var(--bronze-gold);
+}
+
+.site-nav__link--cta {
+  color: rgba(168, 135, 74, 0.8);
+  border-bottom: 1px solid rgba(168, 135, 74, 0.4);
+  padding-bottom: 2px;
+}
+
+.nav-scrolled .site-nav__link--cta {
+  color: var(--bronze-gold);
+  border-bottom-color: var(--bronze-gold);
+}
+
+
+/* ---- HERO ---- */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--logo-ink);
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 40%;
+}
+
+.hero__slides {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 40%;
+  opacity: 0;
+  transition: opacity 1.8s ease;
+}
+
+.hero__slide.is-active {
+  opacity: 1;
+}
+
+#hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+#hero-video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.hero--fallback {
+  background-size: cover;
+  background-position: center 40%;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 28, 16, 0.15) 0%,
+    rgba(26, 28, 16, 0.05) 40%,
+    rgba(26, 28, 16, 0.4) 80%,
+    rgba(26, 28, 16, 0.7) 100%
+  );
+}
+
+.hero__content {
+  position: absolute;
+  bottom: 12vh;
+  left: 40px;
+  right: 40px;
+  z-index: 2;
+  max-width: var(--max-width);
+}
+
+.hero__content h1 {
+  color: var(--ranch-cream);
+  max-width: 700px;
+}
+
+.hero__subtitle {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(243, 240, 231, 0.6);
+  letter-spacing: 1px;
+  margin-top: 20px;
+  max-width: 480px;
+}
+
+.hero__scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.4;
+  transition: opacity 0.6s ease;
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 40px;
+  background: rgba(243, 240, 231, 0.4);
+  animation: pulse 2s ease infinite;
+}
+
+
+/* ---- LANDSCAPE BREAK ---- */
+.landscape-break {
+  position: relative;
+  height: 70vh;
+  margin: 0 40px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.landscape-break__image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.landscape-break__caption {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(243, 240, 231, 0.6);
+}
+
+
+/* ---- SEASON CARDS ---- */
+.season-card__image {
+  aspect-ratio: 4/5;
+  border-radius: 2px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 24px;
+}
+
+.season-card__title {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bronze-gold);
+}
+
+.season-card__text {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--logo-ink);
+  margin-top: 12px;
+}
+
+
+/* ---- SECTION BACKGROUNDS ---- */
+.bg-parchment {
+  background: var(--parchment);
+}
+
+.bg-gold-tint {
+  background: var(--gold-tint);
+}
+
+
+/* ---- BUTTONS ---- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 18px 48px;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.btn--primary {
+  background: var(--logo-ink);
+  color: var(--parchment);
+}
+
+.btn--primary:hover {
+  background: var(--deep-forest);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--logo-ink);
+  border: 1px solid var(--divider);
+}
+
+.btn--outline:hover {
+  border-color: var(--bronze-gold);
+  color: var(--bronze-gold);
+}
+
+
+/* ---- DETAILS GRID (Amenities) ---- */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 40px;
+  max-width: 800px;
+  margin: 48px auto 0;
+}
+
+.details-grid__item {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--warm-stone);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--divider);
+  text-align: center;
+}
+
+
+/* ---- FORMS (Weddings) ---- */
+.inquiry-form {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 28px;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--warm-stone);
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--logo-ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--divider);
+  padding: 12px 0;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-bottom-color: var(--bronze-gold);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+
+/* ---- WEDDING GALLERY ---- */
+.wedding-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 420px 420px 420px;
+  gap: 4px;
+}
+
+.wedding-gallery__item {
+  overflow: hidden;
+  background: var(--logo-ink);
+}
+
+.wedding-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.wedding-gallery__item:hover img {
+  transform: scale(1.03);
+}
+
+/* Wide landscape — cols 1–2, row 1 */
+.wedding-gallery__item:nth-child(1) { grid-column: 1 / 3; }
+
+/* Tall portrait — col 3, rows 1–2 */
+.wedding-gallery__item:nth-child(2) { grid-column: 3; grid-row: 1 / 3; }
+
+@media (max-width: 768px) {
+  .wedding-gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 260px);
+  }
+
+  .wedding-gallery__item:nth-child(1) { grid-column: 1 / 3; }
+  .wedding-gallery__item:nth-child(2) { grid-column: auto; grid-row: auto; }
+}
+
+@media (max-width: 480px) {
+  .wedding-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .wedding-gallery__item:nth-child(1),
+  .wedding-gallery__item:nth-child(2) { grid-column: auto; grid-row: auto; }
+
+  .wedding-gallery__item img { aspect-ratio: 4/3; height: auto; }
+}
+
+
+/* ---- FOOTER ---- */
+.site-footer {
+  border-top: 1px solid var(--divider);
+  padding: 60px 40px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.site-footer__upper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.site-footer__brand img {
+  height: 64px;
+  width: auto;
+  display: block;
+}
+
+.site-footer__location {
+  font-size: 13px;
+  color: var(--warm-stone);
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+.site-footer__links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.site-footer__link {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--warm-stone);
+  transition: color 0.3s ease;
+}
+
+.site-footer__link:hover {
+  color: var(--bronze-gold);
+}
+
+.site-footer__lower {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--divider);
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--divider);
+  letter-spacing: 1px;
+}
+
+
+/* ---- SCROLL ANIMATIONS ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1),
+              transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.15s; }
+.reveal-delay-2 { transition-delay: 0.3s; }
+.reveal-delay-3 { transition-delay: 0.45s; }
+
+
+/* ---- HERO ANIMATIONS ---- */
+.hero-fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.hero-fade-up--delay-1 { animation-delay: 0.3s; }
+.hero-fade-up--delay-2 { animation-delay: 0.5s; }
+.hero-fade-up--delay-3 { animation-delay: 0.7s; }
+
+.hero-rule {
+  opacity: 0;
+  width: 0;
+  animation: fadeRule 1s ease 0.5s forwards;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeRule {
+  to { opacity: 1; width: 48px; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.2; transform: scaleY(1); }
+  50% { opacity: 0.6; transform: scaleY(1.15); }
+}
+
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 80px 24px;
+  }
+
+  .grid-2,
+  .grid-2--asymmetric,
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .details-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 24px;
+  }
+
+  .landscape-break {
+    height: 50vh;
+    margin: 0 16px;
+  }
+
+  .hero__content {
+    left: 24px;
+    right: 24px;
+    bottom: 10vh;
+  }
+
+  .site-nav {
+    padding: 0 24px;
+  }
+
+  .site-nav__links {
+    gap: 16px;
+  }
+
+  .site-nav__link {
+    font-size: 10px;
+  }
+
+  .site-footer__upper {
+    flex-direction: column;
+  }
+
+  .site-footer__links {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-nav__links {
+    display: none; /* Replace with hamburger menu in production */
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landscape-break {
+    height: 40vh;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .hero__content h1 {
+    font-size: 32px;
+  }
+}
