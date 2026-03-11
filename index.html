@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valinor Ranch — Missouri Heights, Carbondale, Colorado</title>
-  <meta name="description" content="Thirty-five private acres above the Roaring Fork Valley. A home built to put nothing between you and the mountains.">
+  <title>Valinor Ranch | Private Mountain Retreat near Aspen Colorado</title>
+  <meta name="description" content="Private ranch retreat overlooking Mount Sopris in the Roaring Fork Valley. Ideal for retreats, gatherings, and mountain escapes.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,10 +20,14 @@
       <a href="index.html" class="site-nav__brand">
         <img src="images/logo.png" alt="Valinor Ranch">
       </a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
       <ul class="site-nav__links">
-        <li><a href="land.html" class="site-nav__link">The Land</a></li>
-        <li><a href="weddings.html" class="site-nav__link">Weddings</a></li>
-        <li><a href="#reserve" class="site-nav__link site-nav__link--cta">Reserve</a></li>
+        <li><a href="index.html" class="site-nav__link">Home</a></li>
+        <li><a href="ranch.html" class="site-nav__link">The Ranch</a></li>
+        <li><a href="gatherings.html" class="site-nav__link">Gatherings</a></li>
+        <li><a href="gatherings.html#inquire" class="site-nav__link site-nav__link--cta">Inquire</a></li>
       </ul>
     </div>
   </nav>
@@ -31,25 +35,23 @@
 
   <main>
 
-    <!-- HERO -->
+    <!-- SECTION 1 — HERO -->
     <section class="hero" aria-label="Hero">
       <div class="hero__slides">
         <div class="hero__slide is-active" style="background-image: url('images/09-1122CoRd102_240923009.jpg');"></div>
         <div class="hero__slide" style="background-image: url('images/07-1122CoRd102_240923007.jpg');"></div>
-        <div class="hero__slide" style="background-image: url('images/12-1122CoRd102_240923012.jpg'); background-position: center center;"></div>
-        <div class="hero__slide" style="background-image: url('images/31-1122CoRd102_240923032.jpg');"></div>
         <div class="hero__slide" style="background-image: url('images/29-1122CoRd102_240923030.jpg');"></div>
-        <div class="hero__slide" style="background-image: url('images/05-1122CoRd102_240923005.jpg');"></div>
+        <div class="hero__slide" style="background-image: url('images/31-1122CoRd102_240923032.jpg');"></div>
         <div class="hero__slide" style="background-image: url('images/40-1122CoRd102_240923041.jpg');"></div>
       </div>
       <div class="hero__overlay"></div>
 
-      <div class="hero__content">
-        <div class="gold-rule hero-rule"></div>
-        <h1 class="hero-fade-up hero-fade-up--delay-1"><em>A frame worthy<br>of the view.</em></h1>
+      <div class="hero__content hero__content--center">
+        <h1 class="hero-fade-up hero-fade-up--delay-1">Valinor Ranch</h1>
         <p class="hero__subtitle hero-fade-up hero-fade-up--delay-2">
-          Thirty-five private acres above the Roaring Fork Valley.
+          A private mountain retreat above the Roaring Fork Valley.
         </p>
+        <a href="gatherings.html#inquire" class="btn btn--primary btn--hero hero-fade-up hero-fade-up--delay-3">Plan Your Stay</a>
       </div>
 
       <div class="hero__scroll" aria-hidden="true">
@@ -58,184 +60,161 @@
     </section>
 
 
-    <!-- THE RANCH — INTRODUCTION -->
-    <section class="bg-parchment" aria-labelledby="ranch-heading">
+    <!-- SECTION 2 — THE LAND -->
+    <section class="section-pad" aria-labelledby="land-heading">
       <div class="container">
-        <div class="grid-2--asymmetric grid-2 reveal">
-
-          <div>
-            <span class="section-label">The Ranch</span>
-            <p style="font-size:12px; line-height:2; letter-spacing:0.05em; color:var(--warm-stone); max-width:none;">
-              Missouri Heights<br>
-              Elevation 6,800 ft<br>
-              35 acres<br>
-              Carbondale, Colorado
-            </p>
-            <div class="gold-rule" style="margin-top:32px;"></div>
-          </div>
-
-          <div>
-            <h2 id="ranch-heading" style="margin-bottom:28px;">
-              A thousand feet above the valley floor, looking directly south at Mt. Sopris.
-            </h2>
-            <p>
-              The Elk Range fills the western horizon. The Roaring Fork Valley runs below.
-              From this altitude, the light moves differently — it comes up over the eastern ridge
-              and finds the windows before the valley floor has fully woken.
-            </p>
-            <p style="margin-top:20px;">
-              Valinor Ranch holds thirty-five acres of working land above the tree line, offered
-              to a single group at a time. The premise is simple: that the right structure, set in
-              the right place, can put nothing between you and the mountains.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- LANDSCAPE BREAK 1 -->
-    <div class="landscape-break reveal">
-      <div class="landscape-break__image" style="background-image: url('images/07-1122CoRd102_240923007.jpg');"></div>
-      <span class="landscape-break__caption">Mt. Sopris — Missouri Heights, CO — 6,800 ft</span>
-    </div>
-
-
-    <!-- THE HOME -->
-    <section class="bg-parchment" aria-labelledby="home-heading" style="padding-top:0;">
-      <div class="container">
-        <div class="grid-2" style="align-items:center;">
-
-          <figure class="reveal">
+        <div class="grid-2 grid-2--align-center reveal">
+          <figure class="img-cover img-cover--landscape">
             <img
-              src="images/05-1122CoRd102_240923005.jpg"
-              alt="Valinor Ranch container home set against the high meadow, Elk Range visible beyond"
+              src="images/07-1122CoRd102_240923007.jpg"
+              alt="Mount Sopris and the Elk Range from Valinor Ranch at 6,800 feet"
               loading="lazy"
-              style="width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:2px;"
             >
           </figure>
-
-          <div class="reveal reveal-delay-1">
-            <div class="stats-row">
-              <div>
-                <span class="stat__number">35</span>
-                <span class="stat__label">Acres</span>
-              </div>
-              <div>
-                <span class="stat__number">4.97</span>
-                <span class="stat__label">Guest Rating</span>
-              </div>
-              <div>
-                <span class="stat__number">1</span>
-                <span class="stat__label">Group at a Time</span>
-              </div>
-            </div>
-
-            <span class="section-label">The Home</span>
-            <h2 id="home-heading" style="margin-bottom:24px;">Engineered for the land it stands on.</h2>
-            <p>
-              The home is a shipping container conversion — two structures joined by a glass bridge,
-              oriented to hold the sight line from Mt. Sopris to the Elk Range. The architecture
-              makes no effort to hide what it is. The steel reads against the meadow. The glass
-              holds the mountain in every interior.
-            </p>
-            <p style="margin-top:20px;">
-              Inside, the rooms are spare and deliberate. Wide plank floors, open plan, the windows
-              doing most of the work. The structure earns its place by getting out of the way.
+          <div>
+            <span class="section-label">The Land</span>
+            <h2 id="land-heading">Thirty-five secluded acres overlooking the Roaring Fork Valley.</h2>
+            <p class="text-poetic">
+              Uninterrupted views of Mount Sopris and the Elk Mountains.
+              Morning light, wide skies, and complete privacy define the experience.
             </p>
           </div>
-
         </div>
       </div>
     </section>
 
 
-    <!-- THE SEASONS -->
-    <section aria-labelledby="seasons-heading" style="padding:80px 40px;">
-      <div style="max-width:var(--max-width); margin:0 auto;">
-
-        <div class="reveal" style="margin-bottom:64px;">
-          <span class="section-label">The Seasons</span>
-          <h2 id="seasons-heading">The ranch holds a different quality<br>in every season.</h2>
+    <!-- SECTION 3 — SIGNATURE MOMENTS -->
+    <section class="section-pad bg-parchment" aria-labelledby="moments-heading">
+      <div class="container">
+        <div class="reveal" style="text-align:center; margin-bottom:64px;">
+          <span class="section-label" style="text-align:center; display:block;">Signature Moments</span>
+          <h2 id="moments-heading">The hours that stay with you.</h2>
         </div>
 
-        <div class="grid-3">
-
-          <article class="reveal">
-            <div class="season-card__image" style="background-image: url('images/31-1122CoRd102_240923032.jpg');"></div>
-            <span class="season-card__title">Winter — Dec – Feb</span>
-            <p class="season-card__text">
-              Frozen silence at altitude. The ranch sits above the valley fog. Some mornings
-              the summit of Mt. Sopris catches the sun before anything below it does.
-            </p>
+        <div class="grid-3 grid-3--moments">
+          <article class="moment-card reveal">
+            <figure class="img-cover img-cover--portrait">
+              <img src="images/12-1122CoRd102_240923012.jpg" alt="Morning light through the glass bridge at Valinor Ranch" loading="lazy">
+            </figure>
+            <p class="moment-card__text">Morning coffee on the deck</p>
           </article>
 
-          <article class="reveal reveal-delay-1">
-            <div class="season-card__image" style="background-image: url('images/29-1122CoRd102_240923030.jpg');"></div>
-            <span class="season-card__title">Summer — Jun – Aug</span>
-            <p class="season-card__text">
-              Long evenings at 6,800 feet. The high meadow grass turns the color of wheat.
-              The Roaring Fork runs cold and full. The afternoon storms build to the south
-              and pass over the ridge.
-            </p>
+          <article class="moment-card reveal reveal-delay-1">
+            <figure class="img-cover img-cover--portrait">
+              <img src="images/39-1122CoRd102_240923040.jpg" alt="Golden hour over the valley from Missouri Heights" loading="lazy">
+            </figure>
+            <p class="moment-card__text">Golden hour over the valley</p>
           </article>
 
-          <article class="reveal reveal-delay-2">
-            <div class="season-card__image" style="background-image: url('images/39-1122CoRd102_240923040.jpg');"></div>
-            <span class="season-card__title">Autumn — Sep – Nov</span>
-            <p class="season-card__text">
-              The aspen groves on the slopes below turn from green to gold to bare in three weeks.
-              The air sharpens. The light gets long and amber. The elk move through
-              the lower pasture at dusk.
-            </p>
+          <article class="moment-card reveal reveal-delay-2">
+            <figure class="img-cover img-cover--portrait">
+              <img src="images/33-1122CoRd102_240923034.jpg" alt="Evening light at Valinor Ranch with the Elk Range" loading="lazy">
+            </figure>
+            <p class="moment-card__text">Evenings around the fire</p>
           </article>
-
         </div>
       </div>
     </section>
 
 
-    <!-- TESTIMONIAL -->
-    <section class="section--forest" aria-label="Guest review" style="padding:120px 40px;">
-      <div style="max-width:760px; margin:0 auto; text-align:center;" class="reveal">
-        <span class="section-label" style="text-align:center; display:block;">4.97 Stars — 200+ Verified Reviews</span>
-        <div class="gold-rule gold-rule--center" style="margin-bottom:48px;"></div>
-        <blockquote style="color:var(--ranch-cream);">
-          "I've stayed in places that describe themselves as special.
-          This one actually is. Nothing competes with the view —
-          not the interiors, not the amenities. Just the land,
-          exactly as advertised."
-        </blockquote>
-        <cite style="display:block; margin-top:32px; font-family:var(--font-body); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(243,240,231,0.45); font-style:normal;">
-          Verified Guest Review
-        </cite>
+    <!-- SECTION 4 — THE EXPERIENCE -->
+    <section class="section-pad section--forest" aria-labelledby="experience-heading">
+      <div class="container">
+        <div class="reveal" style="text-align:center; margin-bottom:80px;">
+          <span class="section-label" style="text-align:center; display:block;">The Experience</span>
+          <h2 id="experience-heading" style="color:var(--ranch-cream);">Three ways the ranch meets you.</h2>
+        </div>
+
+        <div class="grid-3 grid-3--experience">
+          <div class="experience-block reveal">
+            <h3>Private Retreats</h3>
+            <p>A place to disconnect, reflect, and spend time together.</p>
+          </div>
+          <div class="experience-block reveal reveal-delay-1">
+            <h3>Small Gatherings</h3>
+            <p>Celebrations, reunions, and the days that matter most.</p>
+          </div>
+          <div class="experience-block reveal reveal-delay-2">
+            <h3>Nature Immersion</h3>
+            <p>Thirty-five acres of high meadow, wildlife, and mountain silence.</p>
+          </div>
+        </div>
       </div>
     </section>
 
 
-    <!-- LANDSCAPE BREAK 2 -->
-    <div class="landscape-break reveal">
-      <div class="landscape-break__image" style="background-image: url('images/40-1122CoRd102_240923041.jpg');"></div>
-      <span class="landscape-break__caption">The Elk Range — Carbondale, Colorado</span>
-    </div>
+    <!-- SECTION 5 — THE HOME (TEASER) -->
+    <section class="section-pad" aria-labelledby="home-heading">
+      <div class="container">
+        <div class="grid-2 grid-2--align-center reveal">
+          <figure class="img-cover img-cover--tall">
+            <img
+              src="images/05-1122CoRd102_240923005.jpg"
+              alt="Valinor Ranch container home against the high meadow"
+              loading="lazy"
+            >
+          </figure>
+          <div>
+            <span class="section-label">The Ranch House</span>
+            <h2 id="home-heading">A modern mountain home designed for privacy and connection.</h2>
+            <p class="text-poetic">
+              Container architecture, open views, and a structure that earns its place
+              by framing what was already there.
+            </p>
+            <a href="ranch.html" class="btn btn--outline" style="margin-top:40px;">Explore the Ranch</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
-    <!-- RESERVE CTA -->
-    <section id="reserve" aria-labelledby="reserve-heading" style="padding:140px 40px; text-align:center;">
-      <div style="max-width:560px; margin:0 auto;" class="reveal">
-        <span class="section-label" style="display:block; text-align:center;">Reserve</span>
-        <h2 id="reserve-heading" style="margin-bottom:20px;">Reserve your stay.</h2>
-        <p style="margin:0 auto 48px; max-width:400px; text-align:center;">
-          Valinor Ranch accommodates one group at a time.
-          Availability is limited by design.
+    <!-- SECTION 6 — LOCATION -->
+    <section class="section-pad bg-parchment" aria-labelledby="location-heading">
+      <div class="container">
+        <div class="reveal" style="text-align:center;">
+          <span class="section-label" style="text-align:center; display:block;">Location</span>
+          <h2 id="location-heading" style="margin-bottom:48px;">Gateway to the Elk Mountains.</h2>
+
+          <div class="location-grid">
+            <div class="location-item">
+              <span class="location-item__time">10 min</span>
+              <span class="location-item__place">from Carbondale</span>
+            </div>
+            <div class="location-item">
+              <span class="location-item__time">30 min</span>
+              <span class="location-item__place">from Aspen</span>
+            </div>
+            <div class="location-item">
+              <span class="location-item__time">6,800 ft</span>
+              <span class="location-item__place">Missouri Heights</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 7 — CTA -->
+    <section class="cta-hero" aria-labelledby="cta-heading">
+      <div class="cta-hero__image" style="background-image: url('images/29-1122CoRd102_240923030.jpg');"></div>
+      <div class="cta-hero__overlay"></div>
+      <div class="cta-hero__content reveal">
+        <h2 id="cta-heading">Plan your stay at Valinor Ranch.</h2>
+        <a href="gatherings.html#inquire" class="btn btn--primary btn--hero">Inquire</a>
+      </div>
+    </section>
+
+
+    <!-- VALINOR STORY -->
+    <section class="section-pad" aria-labelledby="story-heading" style="text-align:center;">
+      <div style="max-width:640px; margin:0 auto;" class="reveal">
+        <span class="section-label" style="text-align:center; display:block;">The Name</span>
+        <h2 id="story-heading" style="margin-bottom:24px;">Why Valinor.</h2>
+        <p style="text-align:center; max-width:520px; margin:0 auto;">
+          Named after the legendary land of peace and beauty, Valinor Ranch was created
+          as a place to step away from noise and reconnect with nature.
         </p>
-        <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-          <!-- Replace href values with your actual listing URLs -->
-          <a href="https://www.airbnb.com" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Airbnb</a>
-          <a href="https://www.vrbo.com" target="_blank" rel="noopener noreferrer" class="btn btn--outline">VRBO</a>
-          <a href="mailto:daniel@valinorranch.com" class="btn btn--outline">Direct Inquiry</a>
-        </div>
       </div>
     </section>
 
@@ -256,18 +235,18 @@
           </p>
         </div>
         <ul class="site-footer__links">
-          <li><a href="index.html" class="site-footer__link">The Ranch</a></li>
-          <li><a href="land.html" class="site-footer__link">The Land</a></li>
-          <li><a href="weddings.html" class="site-footer__link">Weddings</a></li>
+          <li><a href="index.html" class="site-footer__link">Home</a></li>
+          <li><a href="ranch.html" class="site-footer__link">The Ranch</a></li>
+          <li><a href="gatherings.html" class="site-footer__link">Gatherings</a></li>
+          <li><a href="gatherings.html#inquire" class="site-footer__link">Inquire</a></li>
         </ul>
       </div>
       <div class="site-footer__lower">
-        <span>&copy; 2025 Valinor Ranch</span>
+        <span>&copy; 2026 Valinor Ranch</span>
         <span>Missouri Heights, Carbondale, CO</span>
       </div>
     </div>
   </footer>
-
 
   <script src="js/main.js"></script>
 

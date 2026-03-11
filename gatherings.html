@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gatherings — Valinor Ranch</title>
+  <meta name="description" content="A private setting for meaningful celebrations, retreats, and corporate offsites on thirty-five acres above the Roaring Fork Valley.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a href="index.html" class="site-nav__brand">
+        <img src="images/logo.png" alt="Valinor Ranch">
+      </a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <ul class="site-nav__links">
+        <li><a href="index.html" class="site-nav__link">Home</a></li>
+        <li><a href="ranch.html" class="site-nav__link">The Ranch</a></li>
+        <li><a href="gatherings.html" class="site-nav__link">Gatherings</a></li>
+        <li><a href="#inquire" class="site-nav__link site-nav__link--cta">Inquire</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- SECTION 1 — HERO -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero__image" style="background-image: url('images/TC102631.jpg');"></div>
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content hero__content--center">
+        <h1 class="hero-fade-up hero-fade-up--delay-1">Gather at Valinor Ranch</h1>
+        <p class="hero__subtitle hero-fade-up hero-fade-up--delay-2">
+          A private setting for meaningful celebrations and retreats.
+        </p>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 2 — PRIVATE RETREATS -->
+    <section class="section-pad" aria-labelledby="retreats-heading">
+      <div class="container">
+        <div class="grid-2 grid-2--align-center reveal">
+          <figure class="img-cover img-cover--landscape">
+            <img
+              src="images/33-1122CoRd102_240923034.jpg"
+              alt="Valinor Ranch evening light, private retreat setting"
+              loading="lazy"
+            >
+          </figure>
+          <div>
+            <span class="section-label">Private Retreats</span>
+            <h2 id="retreats-heading">Disconnect, reflect, reconnect.</h2>
+            <p>
+              Wellness retreats, creative workshops, executive offsites.
+              The ranch holds space for groups that need distance from
+              the noise to find what they came for.
+            </p>
+            <p style="margin-top:16px;">
+              Thirty-five acres, one group, and the kind of silence
+              that only altitude provides.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- LANDSCAPE BREAK -->
+    <div class="landscape-break reveal">
+      <div class="landscape-break__image" style="background-image: url('images/TC102635.jpg');"></div>
+    </div>
+
+
+    <!-- SECTION 3 — CELEBRATIONS -->
+    <section class="section-pad" aria-labelledby="celebrations-heading">
+      <div class="container">
+        <div class="grid-2 grid-2--align-center grid-2--reverse reveal">
+          <div>
+            <span class="section-label">Celebrations</span>
+            <h2 id="celebrations-heading">The days that matter most.</h2>
+            <p>
+              Family reunions, milestone celebrations, small weddings.
+              The land becomes the setting for whatever brings
+              your people together.
+            </p>
+            <p style="margin-top:16px;">
+              No packages. No templates. Every gathering at the ranch
+              is shaped around the people who arrive.
+            </p>
+          </div>
+          <figure class="img-cover img-cover--landscape">
+            <img
+              src="images/TC103017.jpg"
+              alt="Gathering at Valinor Ranch, mountain celebration"
+              loading="lazy"
+            >
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 4 — CORPORATE -->
+    <section class="section-pad section--forest" aria-labelledby="corporate-heading">
+      <div class="container">
+        <div class="reveal" style="max-width:640px; margin:0 auto; text-align:center;">
+          <span class="section-label" style="text-align:center; display:block;">Corporate Retreats</span>
+          <h2 id="corporate-heading" style="color:var(--ranch-cream); margin-bottom:24px;">
+            A quiet setting for strategy, connection, and reflection.
+          </h2>
+          <p style="text-align:center; max-width:480px; margin:0 auto;">
+            High-speed internet, full kitchen, private acreage, and no distractions.
+            The ranch provides the conditions for teams to do their clearest thinking.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 5 — INQUIRY FORM -->
+    <section id="inquire" class="section-pad" aria-labelledby="inquire-heading">
+      <div style="max-width:640px; margin:0 auto; padding:0 24px;" class="reveal">
+        <span class="section-label">Inquire</span>
+        <h2 id="inquire-heading" style="margin-bottom:16px;">Tell us about your plans.</h2>
+        <p style="margin-bottom:56px;">
+          We will be in touch within 48 hours.
+        </p>
+
+        <form id="inquiry-form" class="inquiry-form" data-webhook="" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="dates">Preferred Dates</label>
+              <input type="text" id="dates" name="dates" placeholder="Month, Year or specific dates">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="guests">Group Size</label>
+              <input type="text" id="guests" name="guests" placeholder="Approximate number">
+            </div>
+            <div class="form-group">
+              <label for="event-type">Event Type</label>
+              <input type="text" id="event-type" name="event_type" placeholder="Retreat, celebration, wedding, etc.">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us what you have in mind."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary">Request Availability</button>
+          <p class="form-note">Your information is held in confidence and not shared with third parties.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="site-footer">
+      <div class="site-footer__upper">
+        <div>
+          <a href="index.html" class="site-footer__brand">
+            <img src="images/logo.png" alt="Valinor Ranch">
+          </a>
+          <p class="site-footer__location">
+            Missouri Heights<br>
+            Carbondale, Colorado
+          </p>
+        </div>
+        <ul class="site-footer__links">
+          <li><a href="index.html" class="site-footer__link">Home</a></li>
+          <li><a href="ranch.html" class="site-footer__link">The Ranch</a></li>
+          <li><a href="gatherings.html" class="site-footer__link">Gatherings</a></li>
+          <li><a href="gatherings.html#inquire" class="site-footer__link">Inquire</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__lower">
+        <span>&copy; 2026 Valinor Ranch</span>
+        <span>Missouri Heights, Carbondale, CO</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
