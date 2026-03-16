@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Ranch — Valinor Ranch</title>
-  <meta name="description" content="A modern mountain home on thirty-five private acres above the Roaring Fork Valley. Container architecture, panoramic views, and complete privacy.">
+  <meta name="description" content="A modern mountain home on thirty-five private acres above the Roaring Fork Valley. Panoramic views and complete privacy on Missouri Heights.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,8 +26,8 @@
       <ul class="site-nav__links">
         <li><a href="index.html" class="site-nav__link">Home</a></li>
         <li><a href="ranch.html" class="site-nav__link">The Ranch</a></li>
-        <li><a href="gatherings.html" class="site-nav__link">Gatherings</a></li>
-        <li><a href="gatherings.html#inquire" class="site-nav__link site-nav__link--cta">Inquire</a></li>
+        <li><a href="events.html" class="site-nav__link">Private Events</a></li>
+        <li><a href="events.html#inquire" class="site-nav__link site-nav__link--cta">Inquire</a></li>
       </ul>
     </div>
   </nav>
@@ -37,7 +37,7 @@
 
     <!-- SECTION 1 — HERO -->
     <section class="hero" aria-label="Hero">
-      <div class="hero__image" style="background-image: url('images/05-1122CoRd102_240923005.jpg');"></div>
+      <div class="hero__image" style="background-image: url('images/12-1122CoRd102_240923012.jpg');"></div>
       <div class="hero__overlay"></div>
 
       <div class="hero__content hero__content--center">
@@ -45,12 +45,32 @@
         <p class="hero__subtitle hero-fade-up hero-fade-up--delay-2">
           A modern mountain home designed for privacy and connection.
         </p>
+        <button class="btn btn--primary btn--hero hero-fade-up hero-fade-up--delay-3" id="open-booking" type="button">Check Availability</button>
       </div>
 
       <div class="hero__scroll" aria-hidden="true">
         <div class="hero__scroll-line"></div>
       </div>
     </section>
+
+    <!-- BOOKING MODAL -->
+    <div class="booking-modal" id="booking-modal" aria-hidden="true">
+      <div class="booking-modal__overlay" id="booking-modal-overlay"></div>
+      <div class="booking-modal__content">
+        <button class="booking-modal__close" id="close-booking" type="button" aria-label="Close booking">&times;</button>
+        <h2 class="booking-modal__title">Reserve Your Stay</h2>
+        <div class="booking-modal__widget">
+          <div
+            class="igms-direct-booking-widget"
+            id="directBooking1773655264603"
+            data-listing-id="715f6d99-b94d-491b-b846-afd01ce3e4e4"
+            data-widget-color="#A8874A"
+            data-text-check-availability="Check Availability"
+            data-text-book-now="Book Now"
+          ></div>
+        </div>
+      </div>
+    </div>
 
 
     <!-- SECTION 2 — THE HOUSE -->
@@ -59,21 +79,19 @@
         <div class="grid-2 grid-2--align-center reveal">
           <figure class="img-cover img-cover--tall">
             <img
-              src="images/12-1122CoRd102_240923012.jpg"
-              alt="Interior of Valinor Ranch, glass bridge and mountain views"
+              src="images/05-1122CoRd102_240923005.jpg"
+              alt="Valinor Ranch home in environmental context"
               loading="lazy"
             >
           </figure>
           <div>
             <span class="section-label">The House</span>
-            <h2 id="house-heading">Container architecture that earns its place.</h2>
+            <h2 id="house-heading">A modern home that earns its place.</h2>
             <p>
-              Two shipping containers joined by a glass bridge, oriented to hold the sight line
-              from Mt. Sopris to the Elk Range. The steel reads against the meadow.
-              The glass holds the mountain in every interior.
+              Floor-to-ceiling glass oriented to hold the sight line from Mt. Sopris to the Elk Range. The structure reads against the meadow. The mountain is in every interior.
             </p>
             <p style="margin-top:20px;">
-              Open plan, wide plank floors, and the windows doing most of the work.
+              Open plan, warm finishes, and the windows doing most of the work.
               Modern design that disappears into working land.
             </p>
           </div>
@@ -82,7 +100,7 @@
     </section>
 
 
-    <!-- SECTION 3 — THE PROPERTY -->
+    <!-- SECTION 3 — STATS -->
     <section class="fullbleed-image" aria-label="The property">
       <div class="fullbleed-image__bg" style="background-image: url('images/09-1122CoRd102_240923009.jpg');"></div>
       <div class="fullbleed-image__overlay"></div>
@@ -105,11 +123,32 @@
     </section>
 
 
-    <!-- SECTION 4 — AMENITIES -->
+    <!-- SECTION 4 — A DAY AT THE RANCH -->
+    <section class="section-pad" aria-labelledby="day-heading">
+      <div class="container">
+        <div class="reveal" style="max-width:680px; margin:0 auto;">
+          <span class="section-label">The Experience</span>
+          <h2 id="day-heading" style="margin-bottom:40px;">A day at the ranch.</h2>
+
+          <p>
+            Morning is the windows. Coffee in hand, bare feet on warm floor, the Elk Range filling every frame before you have decided what the day holds.
+          </p>
+          <p style="margin-top:24px;">
+            Afternoons stretch. The hot tub against the meadow. The deck with nothing but thirty-five acres of high grass between you and the ridgeline. A walk to the edge of the property where the land drops away and the valley opens below.
+          </p>
+          <p style="margin-top:24px;">
+            Evenings are the fire pit. The stars at this altitude are not what you are accustomed to. The quiet is not the absence of sound — it is the presence of everything the city drowns out.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 5 — AMENITIES -->
     <section class="section-pad bg-parchment" aria-labelledby="amenities-heading">
       <div class="container">
         <div class="reveal" style="text-align:center; margin-bottom:64px;">
-          <span class="section-label" style="text-align:center; display:block;">Amenities</span>
+          <span class="section-label" style="text-align:center; display:block;">Featured Amenities</span>
           <h2 id="amenities-heading">Everything you need. Nothing you do not.</h2>
         </div>
 
@@ -119,77 +158,65 @@
           <div class="amenity-item">Fully Equipped Kitchen</div>
           <div class="amenity-item">High-Speed Internet</div>
           <div class="amenity-item">Hot Tub</div>
-          <div class="amenity-item">EV Charging</div>
+          <div class="amenity-item">Dedicated Workspace</div>
           <div class="amenity-item">Washer &amp; Dryer</div>
-          <div class="amenity-item">Stargazing Skies</div>
-          <div class="amenity-item">Three Bedrooms</div>
+          <div class="amenity-item">Blackout Curtains</div>
           <div class="amenity-item">Pet Friendly</div>
           <div class="amenity-item">Private Parking</div>
-          <div class="amenity-item">Mountain Access</div>
         </div>
       </div>
     </section>
 
 
-    <!-- SECTION 5 — GALLERY -->
-    <section aria-label="Gallery" class="section-pad" style="padding-bottom:0;">
-      <div class="container" style="padding-bottom:0;">
+    <!-- SECTION 6 — GALLERY (TESSELLATED) -->
+    <section class="events-mosaic" aria-label="Gallery">
+      <div class="container" style="padding: 80px 0 0;">
         <div class="reveal" style="text-align:center; margin-bottom:48px;">
           <span class="section-label" style="text-align:center; display:block;">Gallery</span>
           <h2>The ranch, in every light.</h2>
         </div>
       </div>
 
-      <div class="gallery-grid reveal">
-        <figure class="gallery-grid__item gallery-grid__item--wide">
+      <div class="events-mosaic__grid reveal">
+        <figure class="events-mosaic__item">
           <img src="images/09-1122CoRd102_240923009.jpg" alt="Aerial view of Valinor Ranch and Mount Sopris" loading="lazy">
         </figure>
-        <figure class="gallery-grid__item">
-          <img src="images/12-1122CoRd102_240923012.jpg" alt="Glass bridge interior" loading="lazy">
+        <div class="events-mosaic__text">
+          <p>Floor-to-ceiling glass oriented to hold the sight line from Sopris to the Elk Range.</p>
+        </div>
+        <figure class="events-mosaic__item">
+          <img src="images/12-1122CoRd102_240923012.jpg" alt="Interior with mountain views" loading="lazy">
         </figure>
-        <figure class="gallery-grid__item">
-          <img src="images/05-1122CoRd102_240923005.jpg" alt="Container home exterior" loading="lazy">
+        <figure class="events-mosaic__item">
+          <img src="images/05-1122CoRd102_240923005.jpg" alt="Ranch home against the high meadow" loading="lazy">
         </figure>
-        <figure class="gallery-grid__item">
-          <img src="images/39-1122CoRd102_240923040.jpg" alt="Autumn aspen color on Missouri Heights" loading="lazy">
+        <figure class="events-mosaic__item">
+          <img src="images/39-1122CoRd102_240923040.jpg" alt="Golden hour over the valley from Missouri Heights" loading="lazy">
         </figure>
-        <figure class="gallery-grid__item">
+        <figure class="events-mosaic__item">
           <img src="images/31-1122CoRd102_240923032.jpg" alt="Winter snow on the property" loading="lazy">
         </figure>
-        <figure class="gallery-grid__item gallery-grid__item--wide">
+        <div class="events-mosaic__text events-mosaic__text--dark">
+          <p>Thirty-five acres. The quiet is not the absence of sound — it is the presence of everything the city drowns out.</p>
+        </div>
+        <figure class="events-mosaic__item">
           <img src="images/07-1122CoRd102_240923007.jpg" alt="Mount Sopris panorama from the ranch" loading="lazy">
         </figure>
-        <figure class="gallery-grid__item">
+        <figure class="events-mosaic__item">
           <img src="images/29-1122CoRd102_240923030.jpg" alt="Valley views from the deck" loading="lazy">
         </figure>
-        <figure class="gallery-grid__item">
+        <div class="events-mosaic__text">
+          <p>The stars at this altitude are not what you are accustomed to.</p>
+        </div>
+        <figure class="events-mosaic__item">
           <img src="images/33-1122CoRd102_240923034.jpg" alt="Evening light on the Elk Range" loading="lazy">
         </figure>
-        <figure class="gallery-grid__item">
+        <figure class="events-mosaic__item">
           <img src="images/40-1122CoRd102_240923041.jpg" alt="Wide meadow and mountain backdrop" loading="lazy">
         </figure>
-        <figure class="gallery-grid__item">
-          <img src="images/18-1122CoRd102_240923019.jpg" alt="Ranch property detail" loading="lazy">
-        </figure>
-        <figure class="gallery-grid__item gallery-grid__item--wide">
-          <img src="images/TC102631.jpg" alt="Outdoor dining at Valinor Ranch" loading="lazy">
-        </figure>
-        <figure class="gallery-grid__item">
-          <img src="images/TC101404.jpg" alt="Ranch detail" loading="lazy">
-        </figure>
       </div>
     </section>
 
-
-    <!-- SECTION 6 — CTA -->
-    <section class="cta-hero" aria-labelledby="ranch-cta-heading">
-      <div class="cta-hero__image" style="background-image: url('images/40-1122CoRd102_240923041.jpg');"></div>
-      <div class="cta-hero__overlay"></div>
-      <div class="cta-hero__content reveal">
-        <h2 id="ranch-cta-heading">Plan your stay at Valinor Ranch.</h2>
-        <a href="gatherings.html#inquire" class="btn btn--primary btn--hero">Inquire</a>
-      </div>
-    </section>
 
   </main>
 
@@ -210,18 +237,19 @@
         <ul class="site-footer__links">
           <li><a href="index.html" class="site-footer__link">Home</a></li>
           <li><a href="ranch.html" class="site-footer__link">The Ranch</a></li>
-          <li><a href="gatherings.html" class="site-footer__link">Gatherings</a></li>
-          <li><a href="gatherings.html#inquire" class="site-footer__link">Inquire</a></li>
+          <li><a href="events.html" class="site-footer__link">Private Events</a></li>
+          <li><a href="events.html#inquire" class="site-footer__link">Inquire</a></li>
         </ul>
       </div>
       <div class="site-footer__lower">
         <span>&copy; 2026 Valinor Ranch</span>
-        <span>Missouri Heights, Carbondale, CO</span>
+        <span><a href="terms.html" class="site-footer__link">Terms</a> &middot; <a href="privacy.html" class="site-footer__link">Privacy</a></span>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="//www.igms.com/app/widgets/direct-booking/widget.js?v=12-52807" type="application/javascript"></script>
 
 </body>
 </html>
