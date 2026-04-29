@@ -1027,8 +1027,9 @@ p {
   min-height: 420px;
 }
 
-.booking-modal__widget .igms-direct-booking-widget {
+.booking-modal__widget iframe {
   width: 100%;
+  border: 0;
 }
 
 
