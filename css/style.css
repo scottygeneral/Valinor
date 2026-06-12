@@ -398,11 +398,14 @@ p {
   position: relative;
   z-index: 5;
   cursor: pointer;
+}
+
+.btn.btn--hero {
   background: var(--bronze-gold);
   color: var(--logo-ink);
 }
 
-.btn--hero:hover {
+.btn.btn--hero:hover {
   background: var(--gold-tint);
   color: var(--logo-ink);
 }
