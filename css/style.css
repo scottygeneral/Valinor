@@ -1033,6 +1033,114 @@ p {
 }
 
 
+/* ---- OFFER MODAL ---- */
+.offer-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.offer-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.offer-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 28, 16, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.offer-modal__content {
+  position: relative;
+  z-index: 1;
+  background: var(--off-white);
+  width: 90%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 56px 44px;
+  border-radius: 2px;
+  text-align: center;
+  transform: translateY(16px);
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.offer-modal.is-open .offer-modal__content {
+  transform: translateY(0);
+}
+
+.offer-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--stone-dark);
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  transition: color 0.3s ease;
+}
+
+.offer-modal__close:hover {
+  color: var(--charcoal);
+}
+
+.offer-modal__rule {
+  width: 40px;
+  height: 1px;
+  background: var(--bronze-gold);
+  margin: 20px auto 24px;
+}
+
+.offer-modal__title {
+  font-size: clamp(24px, 3vw, 30px);
+  margin-bottom: 16px;
+}
+
+.offer-modal__body {
+  font-size: 15px;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.offer-form {
+  margin-top: 32px;
+  text-align: left;
+}
+
+.offer-form .form-group {
+  margin-bottom: 24px;
+}
+
+.offer-form .form-note {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.offer-modal__success {
+  display: none;
+}
+
+.offer-modal__success.is-visible {
+  display: block;
+}
+
+.offer-modal__success .offer-modal__title {
+  margin-bottom: 12px;
+}
+
+
 /* ---- EVENTS MOSAIC GALLERY ---- */
 .events-mosaic {
   padding: 0;
@@ -1324,6 +1432,16 @@ p {
 
   .booking-modal__widget {
     min-height: 360px;
+  }
+
+  .offer-modal__content {
+    width: 95%;
+    padding: 40px 24px;
+    max-height: 95vh;
+  }
+
+  .offer-modal__title {
+    font-size: 22px;
   }
 
   .events-mosaic__grid {
