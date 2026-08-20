@@ -201,6 +201,146 @@ function onYouTubeIframeAPIReady() {
 })();
 
 
+// ---- DIRECT-BOOKING OFFER MODAL ----
+// Pure exit-intent popup, shown at most once per browsing session. On
+// desktop, exit-intent is the cursor leaving through the top of the
+// viewport. Touch devices have no cursor, so exit-intent is approximated by
+// a fast upward scroll back to the top after the visitor has scrolled down
+// — the closest touch analogue to "heading for the door." Skipped entirely
+// once a visitor has submitted, and snoozed for SNOOZE_DAYS after a plain
+// dismissal so it doesn't nag a returning guest.
+(function initOfferModal() {
+  const modal = document.getElementById('offer-modal');
+  if (!modal) return;
+
+  const overlay = document.getElementById('offer-modal-overlay');
+  const closeBtn = document.getElementById('offer-modal-close');
+  const defaultView = document.getElementById('offer-modal-default');
+  const successView = document.getElementById('offer-modal-success');
+  const form = document.getElementById('offer-form');
+
+  const STORAGE_KEY = 'valinorOffer';
+  const SNOOZE_DAYS = 30;
+  const SCROLL_DOWN_THRESHOLD = 400;
+  const SCROLL_UP_BURST = 120;
+
+  function getState() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    } catch {
+      return {};
+    }
+  }
+
+  function setState(patch) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(Object.assign(getState(), patch)));
+    } catch {
+      /* private browsing or storage disabled — fail quietly */
+    }
+  }
+
+  const state = getState();
+  if (state.subscribed) return;
+
+  if (state.dismissedAt) {
+    const daysSince = (Date.now() - state.dismissedAt) / (1000 * 60 * 60 * 24);
+    if (daysSince < SNOOZE_DAYS) return;
+  }
+
+  if (sessionStorage.getItem('valinorOfferShown')) return;
+
+  function openModal() {
+    if (modal.classList.contains('is-open')) return;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    sessionStorage.setItem('valinorOfferShown', '1');
+    document.removeEventListener('mouseout', onExitIntent);
+    window.removeEventListener('scroll', onScrollExitIntent);
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    if (!successView.classList.contains('is-visible')) {
+      setState({ dismissedAt: Date.now() });
+    }
+  }
+
+  // Desktop: cursor exits through the top of the viewport toward tab/URL bar.
+  function onExitIntent(e) {
+    if (e.clientY <= 0 && !e.relatedTarget) {
+      openModal();
+    }
+  }
+
+  // Touch: no cursor to leave the page, so treat a fast scroll back up to
+  // the top — after having scrolled down a meaningful distance — as the
+  // visitor disengaging.
+  let hasScrolledDown = false;
+  let lastScrollY = window.scrollY;
+  let upBurst = 0;
+
+  function onScrollExitIntent() {
+    const y = window.scrollY;
+    if (y > SCROLL_DOWN_THRESHOLD) hasScrolledDown = true;
+
+    if (y < lastScrollY) {
+      upBurst += lastScrollY - y;
+    } else {
+      upBurst = 0;
+    }
+
+    if (hasScrolledDown && y < 80 && upBurst > SCROLL_UP_BURST) {
+      openModal();
+    }
+
+    lastScrollY = y;
+  }
+
+  document.addEventListener('mouseout', onExitIntent);
+  window.addEventListener('scroll', onScrollExitIntent, { passive: true });
+
+  if (overlay) overlay.addEventListener('click', closeModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  });
+
+  if (form) {
+    const WEBHOOK_URL = form.dataset.webhook || '';
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const btn = form.querySelector('[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      const data = Object.fromEntries(new FormData(form));
+
+      try {
+        if (WEBHOOK_URL) {
+          await fetch(WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          });
+        }
+
+        setState({ subscribed: true, subscribedAt: Date.now() });
+        defaultView.style.display = 'none';
+        successView.classList.add('is-visible');
+      } catch {
+        btn.disabled = false;
+        btn.textContent = 'Send the Details';
+      }
+    });
+  }
+})();
+
+
 // ---- HERO SLIDESHOW ----
 (function initHeroSlideshow() {
   const slides = document.querySelectorAll('.hero__slide');
