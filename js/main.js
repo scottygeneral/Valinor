@@ -250,11 +250,14 @@ function onYouTubeIframeAPIReady() {
 
   if (sessionStorage.getItem('valinorOfferShown')) return;
 
+  let openedAt = 0;
+
   function openModal() {
     if (modal.classList.contains('is-open')) return;
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
     sessionStorage.setItem('valinorOfferShown', '1');
+    openedAt = Date.now();
     document.removeEventListener('mouseout', onExitIntent);
     window.removeEventListener('scroll', onScrollExitIntent);
   }
@@ -310,15 +313,33 @@ function onYouTubeIframeAPIReady() {
 
   if (form) {
     const WEBHOOK_URL = form.dataset.webhook || '';
+    const MIN_FILL_TIME_MS = 3000;
 
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
       const btn = form.querySelector('[type="submit"]');
+      const data = Object.fromEntries(new FormData(form));
+
+      function showSent() {
+        setState({ subscribed: true, subscribedAt: Date.now() });
+        defaultView.style.display = 'none';
+        successView.classList.add('is-visible');
+      }
+
+      // Honeypot: real visitors never see or fill this field.
+      // Time trap: bots submit far faster than a human filling the form.
+      // Both fail silently (fake success) so bots don't learn to adapt.
+      const isSpam = data.company || (Date.now() - openedAt) < MIN_FILL_TIME_MS;
+      delete data.company;
+
+      if (isSpam) {
+        showSent();
+        return;
+      }
+
       btn.disabled = true;
       btn.textContent = 'Sending...';
-
-      const data = Object.fromEntries(new FormData(form));
 
       try {
         if (WEBHOOK_URL) {
@@ -329,9 +350,7 @@ function onYouTubeIframeAPIReady() {
           });
         }
 
-        setState({ subscribed: true, subscribedAt: Date.now() });
-        defaultView.style.display = 'none';
-        successView.classList.add('is-visible');
+        showSent();
       } catch {
         btn.disabled = false;
         btn.textContent = 'Send the Details';
