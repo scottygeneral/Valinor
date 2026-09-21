@@ -972,6 +972,12 @@ p {
   color: var(--bronze-gold);
 }
 
+.site-footer__badges {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
 .site-footer__lower {
   margin-top: 24px;
   padding-top: 24px;
