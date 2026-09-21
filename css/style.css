@@ -410,6 +410,15 @@ p {
   color: var(--logo-ink);
 }
 
+.hero__cta-note {
+  margin-top: 14px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(250, 248, 244, 0.75);
+}
+
 .hero__scroll {
   position: absolute;
   bottom: 32px;
